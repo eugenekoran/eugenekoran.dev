@@ -6,35 +6,44 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import { getSite } from '../../utils/consts';
 import { withBase } from '../../utils/slugify';
 
-const projects = (await getCollection('projects')).sort(
+const allProjects = (await getCollection('projects')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const researchProjects = allProjects.filter((p) => p.data.category === 'research');
+const personalProjects = allProjects.filter((p) => p.data.category !== 'research');
+
 const site = await getSite();
 ---
 
-<PageLayout title={`Projects · ${site.title}`} description="Explore case studies and recent builds.">
+<PageLayout title={`Projects · ${site.title}`} description="AI Safety research and engineering projects.">
 	<section class="content-shell py-12 space-y-10">
 		<header class="space-y-2">
 			<p class="text-sm uppercase tracking-[0.35em] text-muted">Projects</p>
-			<h1 class="text-4xl font-semibold text-ink">Product stories and recent experiences</h1>
+			<h1 class="text-4xl font-semibold text-ink">Research & Engineering</h1>
 			<p class="text-muted max-w-3xl">
-				Sharing results, learnings, and design structures that power creative and technical teams.
+				AI Safety research, alignment experiments, and engineering projects.
 			</p>
 		</header>
-		{projects.length === 0 ? (
-			<p class="text-muted">No projects published yet.</p>
-		) : (
+
+		{researchProjects.length > 0 && (
 			<div class="space-y-6">
-				{projects.map((project) => (
+				<div class="flex items-center gap-3">
+					<span class="inline-flex items-center rounded-full bg-[color-mix(in_oklab,var(--color-ink)_8%,var(--color-surface))] px-3 py-1 text-xs font-bold uppercase tracking-[0.3em] text-ink">Research</span>
+					<div class="flex-1 border-t border-base-200"></div>
+				</div>
+				{researchProjects.map((project) => (
 					<a
-						class="group block w-full overflow-hidden rounded-[28px] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-none transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_18px_45px_color-mix(in_oklab,var(--color-ink)_25%,transparent)] md:flex md:items-center md:gap-6"
+						class="group block w-full overflow-hidden rounded-[28px] border border-[color-mix(in_oklab,var(--color-ink)_15%,var(--color-border))] bg-[color:var(--color-surface)] p-5 shadow-none transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_18px_45px_color-mix(in_oklab,var(--color-ink)_25%,transparent)] md:flex md:items-center md:gap-6 ring-1 ring-[color-mix(in_oklab,var(--color-ink)_6%,transparent)]"
 						href={withBase(`/projects/${project.id}/`)}
 					>
 						<div class="flex flex-1 flex-col">
-							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-muted">Project</p>
+							<div class="flex items-center gap-2">
+								<p class="text-xs font-semibold uppercase tracking-[0.35em] text-muted">SPAR · Research</p>
+							</div>
 							<h3 class="mt-2 text-2xl font-semibold text-ink group-hover:text-ink">{project.data.title}</h3>
 							<time class="mt-1 text-xs uppercase tracking-[0.4em] text-muted md:hidden" datetime={project.data.pubDate.toISOString()}>
-								{project.data.pubDate.toLocaleDateString('es-MX', {
+								{project.data.pubDate.toLocaleDateString('en-US', {
 									day: 'numeric',
 									month: 'short',
 									year: 'numeric',
@@ -43,7 +52,7 @@ const site = await getSite();
 							<p class="mt-3 text-lg text-muted">{project.data.description}</p>
 							<div class="mt-3 hidden items-center gap-2 text-sm text-muted md:flex">
 								<time datetime={project.data.pubDate.toISOString()}>
-									{project.data.pubDate.toLocaleDateString('es-MX', {
+									{project.data.pubDate.toLocaleDateString('en-US', {
 										day: 'numeric',
 										month: 'short',
 										year: 'numeric',
@@ -56,10 +65,55 @@ const site = await getSite();
 								<Image src={project.data.heroImage} alt={project.data.title} width={220} height={140} class="h-full w-full object-cover" />
 							</figure>
 						)}
-						<time class="sr-only" />
 					</a>
 				))}
 			</div>
+		)}
+
+		{personalProjects.length > 0 && (
+			<div class="space-y-6">
+				<div class="flex items-center gap-3 pt-4">
+					<span class="inline-flex items-center rounded-full bg-[color-mix(in_oklab,var(--color-ink)_8%,var(--color-surface))] px-3 py-1 text-xs font-bold uppercase tracking-[0.3em] text-ink">Personal Projects</span>
+					<div class="flex-1 border-t border-base-200"></div>
+				</div>
+				{personalProjects.map((project) => (
+					<a
+						class="group block w-full overflow-hidden rounded-[28px] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-none transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_18px_45px_color-mix(in_oklab,var(--color-ink)_25%,transparent)] md:flex md:items-center md:gap-6"
+						href={withBase(`/projects/${project.id}/`)}
+					>
+						<div class="flex flex-1 flex-col">
+							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-muted">Project</p>
+							<h3 class="mt-2 text-2xl font-semibold text-ink group-hover:text-ink">{project.data.title}</h3>
+							<time class="mt-1 text-xs uppercase tracking-[0.4em] text-muted md:hidden" datetime={project.data.pubDate.toISOString()}>
+								{project.data.pubDate.toLocaleDateString('en-US', {
+									day: 'numeric',
+									month: 'short',
+									year: 'numeric',
+								})}
+							</time>
+							<p class="mt-3 text-lg text-muted">{project.data.description}</p>
+							<div class="mt-3 hidden items-center gap-2 text-sm text-muted md:flex">
+								<time datetime={project.data.pubDate.toISOString()}>
+									{project.data.pubDate.toLocaleDateString('en-US', {
+										day: 'numeric',
+										month: 'short',
+										year: 'numeric',
+									})}
+								</time>
+							</div>
+						</div>
+						{project.data.heroImage && (
+							<figure class="mt-4 h-32 w-full overflow-hidden rounded-[18px] border border-[color:var(--color-border)] bg-[color-mix(in_oklab,var(--color-surface)_80%,transparent)] md:mt-0 md:h-24 md:w-32">
+								<Image src={project.data.heroImage} alt={project.data.title} width={220} height={140} class="h-full w-full object-cover" />
+							</figure>
+						)}
+					</a>
+				))}
+			</div>
+		)}
+
+		{allProjects.length === 0 && (
+			<p class="text-muted">No projects published yet.</p>
 		)}
 	</section>
 </PageLayout>

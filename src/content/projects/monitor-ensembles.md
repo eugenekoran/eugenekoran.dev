@@ -3,6 +3,7 @@ title: "Monitor Ensembles for AI Control"
 description: "Developed diverse monitor ensembles combining prompting and fine-tuning approaches to detect backdoored code in AI Control settings. Achieved 13+ percentage point improvement over single-monitor baselines (pAUC) with a 3-monitor ensemble."
 pubDate: 2025-09-01
 tags: ["AI Safety", "AI Control", "Fine-Tuning", "Inspect AI"]
+category: research
 ---
 
 ## Overview
