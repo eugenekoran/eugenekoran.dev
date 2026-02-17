@@ -1,19 +1,16 @@
 author:
-  name: Dasein
-  role: PhD in Philosophy
-  bio:  Known for contributions to phenomenology, hermeneutics, and existentialism.
-  location: Munich, Germany
+  name: Eugene Koran
+  role: Researcher · Engineer · Builder
+  bio: I assign high probability to transformative AI arriving soon. I'm sure it will be wild — and there are real alignment and societal risks on the horizon. I focus on making contributions that optimize for worlds where humans flourish in the long run and the transformation happens cleanly.
+  location: San Francisco Bay Area, CA
 
 social:
-  - id: "x"
-    label: "X"
-    href: "#_"
   - id: "github"
     label: "GitHub"
-    href: "https://github.com/roicort"
+    href: "https://github.com/eugenekoran"
   - id: "linkedin"
-    label: "Linkedin"
-    href: "#_"
+    label: "LinkedIn"
+    href: "https://www.linkedin.com/in/eugenekoran"
   - id: "email"
     label: "Email"
-    href: "mailto:"
+    href: "mailto:yauheni.koran@icloud.com"

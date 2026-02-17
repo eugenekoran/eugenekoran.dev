@@ -15,16 +15,16 @@ const site = await getSite();
 ---
 
 <PageLayout
-	title={site.author.name || 'Dasein'}
+	title={site.author.name || 'Eugene Koran'}
 >
 	<Hero
-		title={site.author.name || 'Dasein'}
+		title={site.author.name || 'Eugene Koran'}
 		description={site.author.bio || 'Welcome to my personal website.'}
 		role={site.author.role}
 		location={site.author.location}
 		actions={[
-			{ label: 'View Blog', href: '/blog' },
-			{ label: 'Get Quote', href: '/contact' },
+			{ label: 'View Research', href: '/projects' },
+			{ label: 'About Me', href: '/about' },
 		]}
 	/>
 
@@ -36,13 +36,7 @@ const site = await getSite();
 		viewAllHref="/projects"
 	/>
 
-	<PostList
-		heading="Blog"
-		limit={3}
-		viewAllHref="/blog"
-	/>
-
-	            <!-- Sections (from src/content/sections.yml) -->
+	            <!-- Sections (from cv.yml) -->
             {
                 cv.map((section) => {
                     if (section.data.items) {
@@ -56,5 +50,11 @@ const site = await getSite();
                     return null;
                 })
             }
-		
+
+	<PostList
+		heading="Blog"
+		limit={3}
+		viewAllHref="/blog"
+	/>
+
 </PageLayout>
