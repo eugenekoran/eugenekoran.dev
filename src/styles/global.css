@@ -286,3 +286,10 @@
 		line-height: 1.2;
 	}
 }
+
+/* Prevent search modal FOUC: this rule must be in <head> CSS so it applies
+   before the modal HTML is parsed during HTML streaming from the CDN. */
+#search-modal {
+	opacity: 0;
+	pointer-events: none;
+}
