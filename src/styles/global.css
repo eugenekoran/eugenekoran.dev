@@ -70,17 +70,6 @@
 		border: 0;
 	}
 
-	:root[data-debug='on'] * {
-		outline: 1px dashed color-mix(in oklab, var(--color-ink) 100%, transparent);
-		outline-offset: -1px;
-	}
-
-	:root[data-debug='on'] body {
-		background-image:
-			linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
-			linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
-		background-size: var(--grid-cell-x) var(--grid-cell-y);
-	}
 }
 
 @layer components {
@@ -287,9 +276,10 @@
 	}
 }
 
-/* Prevent search modal FOUC: this rule must be in <head> CSS so it applies
-   before the modal HTML is parsed during HTML streaming from the CDN. */
-#search-modal {
+/* Prevent search modal FOUC: loaded in <head> so it applies before the modal
+   HTML is parsed during HTML streaming. Class selector (0-0-1-0) is lower
+   specificity than .search-modal.is-open (0-0-2-0), so opening still works. */
+.search-modal {
 	opacity: 0;
 	pointer-events: none;
 }
