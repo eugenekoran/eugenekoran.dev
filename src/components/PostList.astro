@@ -60,6 +60,7 @@ const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
 
 ---
 
+{visiblePosts.length > 0 && (
 <section class="content-shell">
     <div>
         <div
@@ -114,3 +115,4 @@ const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
         </div>
     </div>
 </section>
+)}
