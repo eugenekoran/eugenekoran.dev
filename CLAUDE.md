@@ -2,7 +2,7 @@
 
 ## What is this
 
-Personal website for Eugene Koran — an ML Engineer transitioning to AI Safety Research Engineering. Built with the Dasein Astro template, deploying to Cloudflare Pages at `eugenekoran.dev`.
+Personal website for Eugene Koran — an AI/ML Engineer. Built with the Dasein Astro template, deploying to Cloudflare Pages at `eugenekoran.dev`.
 
 ## Commands
 
@@ -35,7 +35,6 @@ heroImage: image (optional)
 ```
 - `category: research` projects appear in a separate "Research" group on `/projects/` with visual distinction (SPAR badge, subtle ring border)
 - `category: personal` (default) projects appear under "Personal Projects"
-- Currently 4 projects: monitor-ensembles (research), ai-control-evals, steering-search-algorithms, mleb
 
 ### Blog (`src/content/blog/*.md`)
 Same schema as projects minus `category`. **Currently empty** — blog page exists structurally but has no posts. The "blog collection does not exist" warnings during build are expected and harmless.
@@ -76,9 +75,12 @@ Author info (name, role, bio, location) and social links. Consumed by `src/utils
 - **Domain:** `eugenekoran.dev` (purchased via Cloudflare Registrar)
 - **Build settings:** Framework preset Astro, build command `bun run build`, output dir `dist`
 
+## Development
+
+- **Concise commit messages:** Keep commit messages concise and focused
+
 ## Important Context
 
-- The role title ("Researcher · Engineer · Builder") is intentionally generic — avoids signaling "AI Safety" to current employer
-- Industry projects are excluded from the `/projects/` page by design — only AI safety/research projects are listed there. Industry experience is in `cv.yml` on the homepage timeline only.
+- The role title ("Researcher · Engineer · Builder") is intentionally generic
 - Blog is ready but intentionally empty. Build warnings about empty blog collection are expected.
 - Template originally had Spanish locale strings (`es-MX` dates, Spanish tag page labels) — these have been translated to English but watch for any remaining ones.

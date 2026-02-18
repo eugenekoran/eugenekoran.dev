@@ -1,19 +1,18 @@
 ---
 title: "MultiLingual Exam Benchmark"
-description: "Developed a novel evaluation dataset and framework for assessing advanced multilingual capabilities of Large Language Models."
-pubDate: 2024-10-01
+description: "Developed an evaluation dataset and framework for assessing multilingual capabilities of Large Language Models."
+pubDate: 2024-09-15
 tags: ["LLM Evaluation", "Python", "Inspect AI"]
 ---
 
 ## Overview
 
-A novel evaluation framework designed to rigorously test the multilingual capabilities of Large Language Models across diverse dimensions including language understanding, domain-specific knowledge, visual reasoning, and instruction following.
+An evaluation framework for testing the multilingual capabilities of Large Language Models across language understanding, domain-specific knowledge, and visual reasoning.
 
 ## Key Contributions
 
-- Designed comprehensive evaluation framework spanning multiple capability dimensions
-- Created evaluation datasets testing multilingual understanding and domain expertise
-- Open-sourced the initial dataset and codebase on GitHub
+- Designed an evaluation framework covering multilingual understanding and domain expertise
+- Open-sourced initial dataset and codebase on GitHub
 
 ## Links
 

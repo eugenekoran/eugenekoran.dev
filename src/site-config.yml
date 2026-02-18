@@ -1,7 +1,7 @@
 author:
   name: Eugene Koran
   role: Researcher · Engineer · Builder
-  bio: I assign high probability to transformative AI arriving soon. I'm sure it will be wild — and there are real alignment and societal risks on the horizon. I focus on making contributions that optimize for worlds where humans flourish in the long run and the transformation happens cleanly.
+  bio: I assign high probability to transformative AI arriving soon — with it come serious alignment challenges and societal disruption that deserve rigorous attention. My focus is increasingly on research that meaningfully improves the odds of a future where transformative AI preserves human values and humans genuinely flourish in the long run.
   location: San Francisco Bay Area, CA
 
 social:
@@ -13,4 +13,4 @@ social:
     href: "https://www.linkedin.com/in/eugenekoran"
   - id: "email"
     label: "Email"
-    href: "mailto:yauheni.koran@icloud.com"
+    href: "mailto:yauheni.koran@gmail.com"

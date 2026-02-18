@@ -12,11 +12,13 @@ import PageLayout from '../layouts/PageLayout.astro';
 		<div class="max-w-[90rem] mx-auto px-8">
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-3 border-b py-12 border-base-200">
 				<div class="lg:sticky lg:top-24 lg:z-40 self-start">
-					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">About</h2>
+					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Motivation</h2>
 				</div>
 				<div class="flex flex-col gap-6 lg:col-span-2 max-w-2xl">
-					<p class="m-0 text-ink text-2xl font-semibold leading-tight">ML Engineer with 7+ years of industry experience, pivoting to AI Safety research to work on one of the most important problems of our time.</p>
-					<p class="m-0 text-muted text-base leading-relaxed">I assign high probability to transformative AI arriving soon. I'm sure it will be wild — and there are real alignment and societal risks on the horizon. I focus on making contributions that optimize for worlds where humans flourish in the long run and the transformation happens cleanly.</p>
+					<p class="m-0 text-ink text-2xl font-semibold leading-tight">On Transformative AI: Why AI Safety?</p>
+					<p class="m-0 text-muted text-base leading-relaxed">We are on an exponential curve of AI capability development, and its economic and societal impact will continue to grow rapidly. This is my current view, strongly supported by empirical evidence and technical understanding. I approach it with scientific interest and clear-eyed rationality — I am excited about the technologies that can be created and the problems that can be solved with the help of powerful AI, but I also clearly see the technical challenges of building powerful AI responsibly and the societal upheavals that may follow as this technology reshapes the world and its power structures.</p>
+					<p class="m-0 text-muted text-base leading-relaxed">We don't know how to ensure that powerful AI systems are aligned with our values. Crucially, our current alignment techniques may not generalize to the critical cases involving AI systems at or above human intelligence. How do we ensure that powerful AI systems solve challenging problems in the world without pursuing misaligned goals — or reshaping the world in ways that disregard human values, especially when they have the capability to do so effectively?</p>
+					<p class="m-0 text-muted text-base leading-relaxed">I think these are hard, real problems of high significance. I hope to make contributions that marginally shift the future toward worlds where capable AI systems exercise their power in ways humans recognize on reflection as good.</p>
 				</div>
 			</div>
 		</div>
@@ -30,8 +32,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Research Focus</h2>
 				</div>
 				<div class="flex flex-col gap-4 lg:col-span-2 max-w-2xl">
-					<p class="m-0 text-muted text-base leading-relaxed">Currently focused on AI Control — investigating multi-monitor ensemble techniques that enhance the safety-usefulness Pareto frontier. As a SPAR (Supervised Program for Alignment Research) Fellow, I've developed diverse monitor ensembles for detecting backdoored code, combining prompting and fine-tuning approaches.</p>
-					<p class="m-0 text-muted text-base leading-relaxed">My work also spans mechanistic interpretability and LLM evaluation.</p>
+					<p class="m-0 text-muted text-base leading-relaxed">I'm currently focusing on improving the mechanisms of AI Control and understanding scheming behaviors in AI systems. I also have a strong interest in white-box methods for understanding models' reasoning and decision-making processes.</p>
 				</div>
 			</div>
 		</div>
@@ -45,44 +46,18 @@ import PageLayout from '../layouts/PageLayout.astro';
 					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Industry Background</h2>
 				</div>
 				<div class="flex flex-col gap-4 lg:col-span-2 max-w-2xl">
-					<p class="m-0 text-muted text-base leading-relaxed">My engineering career spans fraud detection, identity verification, and ML infrastructure at companies including Capital One and Synapse Financial Technologies. I've led teams, shipped production ML systems processing millions of transactions, and built tooling that serves entire ML engineering organizations.</p>
-					<p class="m-0 text-muted text-base leading-relaxed">This background gives me strong foundations in building reliable, scalable AI systems — skills directly transferable to safety research engineering.</p>
+					<p class="m-0 text-muted text-base leading-relaxed">I have extensive experience building ML systems end-to-end — from early-stage startups where I designed and shipped ML products from the ground up to large engineering organizations where I improve shared ML infrastructure and tooling. I'm equally comfortable prototyping quickly and writing production-grade code, and I enjoy building systems that work reliably at scale.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Skills & Tools -->
+	<!-- Education & Certificates -->
 	<section>
 		<div class="max-w-[90rem] mx-auto px-8">
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-3 border-b py-12 border-base-200">
 				<div class="lg:sticky lg:top-24 lg:z-40 self-start">
-					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Skills & Tools</h2>
-				</div>
-				<div class="flex flex-col gap-8 lg:col-span-2 max-w-2xl">
-					<div>
-						<h3 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Programming</h3>
-						<p class="mt-1 text-xs 2xl:text-lg text-base-600">Python, C++, Bash, Linux, PyTorch, Keras, fastai, wandb, Scikit-learn, Pandas</p>
-					</div>
-					<div>
-						<h3 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Infrastructure</h3>
-						<p class="mt-1 text-xs 2xl:text-lg text-base-600">Git, Docker, Kubernetes, AWS, Hadoop, Spark, AirFlow, MongoDB, SQL, Redis</p>
-					</div>
-					<div>
-						<h3 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">AI Safety</h3>
-						<p class="mt-1 text-xs 2xl:text-lg text-base-600">Inspect AI, TransformerLens, SAELens, HuggingFace Transformers, Activation Steering, Linear Probing</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Certificates -->
-	<section>
-		<div class="max-w-[90rem] mx-auto px-8">
-			<div class="grid grid-cols-1 gap-6 md:grid-cols-3 border-b py-12 border-base-200">
-				<div class="lg:sticky lg:top-24 lg:z-40 self-start">
-					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Certificates</h2>
+					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Education & Certificates</h2>
 				</div>
 				<div class="flex flex-col gap-8 lg:col-span-2 max-w-2xl">
 					<article class="grid grid-cols-1 gap-1 lg:grid-cols-3 lg:items-start">
@@ -96,21 +71,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 							<h3 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Full Stack Deep Learning Bootcamp</h3>
 							<p class="mt-1 text-xs 2xl:text-lg text-base-600">Berkeley, CA</p>
 						</div>
-						<p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto"><time>2019</time></p>
+						<p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto"><time>Nov 2019</time></p>
 					</article>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Education -->
-	<section>
-		<div class="max-w-[90rem] mx-auto px-8">
-			<div class="grid grid-cols-1 gap-6 md:grid-cols-3 py-12 border-base-200">
-				<div class="lg:sticky lg:top-24 lg:z-40 self-start">
-					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Education</h2>
-				</div>
-				<div class="flex flex-col gap-8 lg:col-span-2 max-w-2xl">
 					<article class="grid grid-cols-1 gap-1 lg:grid-cols-3 lg:items-start">
 						<div class="lg:col-span-2">
 							<h3 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Galvanize Data Science Immersive</h3>
@@ -125,6 +87,20 @@ import PageLayout from '../layouts/PageLayout.astro';
 						</div>
 						<p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto"><time>2010</time></p>
 					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Beyond Work -->
+	<section>
+		<div class="max-w-[90rem] mx-auto px-8">
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-3 py-12 border-base-200">
+				<div class="lg:sticky lg:top-24 lg:z-40 self-start">
+					<h2 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">Beyond Work</h2>
+				</div>
+				<div class="flex flex-col gap-4 lg:col-span-2 max-w-2xl">
+					<p class="m-0 text-muted text-base leading-relaxed">I discovered competitive programming through following how AI systems have been advancing in this domain — and quickly got hooked. I balance this with professional and life commitments, but my long-term aspiration is to become a "red" coder.</p>
 				</div>
 			</div>
 		</div>
