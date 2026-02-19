@@ -10,7 +10,6 @@ const { class: className = '' } = Astro.props as Props;
 
 <button
 	type="button"
-	id="search-toggle"
 	aria-haspopup="dialog"
 	aria-controls="search-modal"
 	aria-expanded="false"
@@ -52,7 +51,6 @@ const { class: className = '' } = Astro.props as Props;
 
 <script is:inline>
 const searchModal = document.getElementById('search-modal');
-const searchToggle = document.getElementById('search-toggle');
 const searchClose = document.getElementById('search-close');
 const searchBackdrop = document.querySelector('[data-close="search"]');
 
@@ -61,43 +59,64 @@ if (searchModal && searchModal.parentElement !== document.body) {
 	document.body.appendChild(searchModal);
 }
 
-const setSearchVisibility = (isOpen) => {
-	if (!searchModal) return;
-	searchModal.classList.toggle('is-open', isOpen);
-	searchModal.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-	searchModal.toggleAttribute('inert', !isOpen);
-	if (searchToggle) searchToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-	document.body.classList.toggle('search-open', isOpen);
-};
+// Guard against double-initialization when component is rendered multiple times
+// (e.g. desktop nav + mobile nav both include SearchModal)
+if (!window.__searchInited) {
+	window.__searchInited = true;
 
-const focusSearchInput = () => {
-	const input = document.querySelector('#search-modal .pagefind-ui__search-input');
-	if (input instanceof HTMLInputElement) {
-		input.focus();
-		input.select();
-	}
-};
+	const setSearchVisibility = (isOpen) => {
+		if (!searchModal) return;
+		searchModal.classList.toggle('is-open', isOpen);
+		searchModal.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+		searchModal.toggleAttribute('inert', !isOpen);
+		// Update all trigger buttons across desktop and mobile nav
+		document.querySelectorAll('.search-trigger').forEach(btn => {
+			btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		});
+		document.body.classList.toggle('search-open', isOpen);
+	};
 
-const openSearch = () => {
-	setSearchVisibility(true);
-	window.requestAnimationFrame(() => {
-		window.setTimeout(focusSearchInput, 60);
+	const focusSearchInput = () => {
+		const input = document.querySelector('#search-modal .pagefind-ui__search-input');
+		if (input instanceof HTMLInputElement) {
+			input.focus();
+			input.select();
+		}
+	};
+
+	const openSearch = () => {
+		// Close mobile nav first so it doesn't sit behind/above the search modal
+		if (document.documentElement.dataset.nav === 'open') {
+			document.documentElement.dataset.nav = 'closed';
+			const mobileNav = document.getElementById('mobile-nav');
+			if (mobileNav) mobileNav.style.display = 'none';
+		}
+		setSearchVisibility(true);
+		window.requestAnimationFrame(() => {
+			window.setTimeout(focusSearchInput, 60);
+		});
+	};
+
+	const closeSearch = () => {
+		setSearchVisibility(false);
+	};
+
+	// Use event delegation so any .search-trigger anywhere on the page works
+	document.addEventListener('click', (e) => {
+		if (e.target instanceof Element && e.target.closest('.search-trigger')) {
+			openSearch();
+		}
 	});
-};
 
-const closeSearch = () => {
-	setSearchVisibility(false);
-};
+	if (searchClose) searchClose.addEventListener('click', closeSearch);
+	if (searchBackdrop) searchBackdrop.addEventListener('click', closeSearch);
 
-if (searchToggle) searchToggle.addEventListener('click', openSearch);
-if (searchClose) searchClose.addEventListener('click', closeSearch);
-if (searchBackdrop) searchBackdrop.addEventListener('click', closeSearch);
-
-window.addEventListener('keydown', (event) => {
-	if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
-		closeSearch();
-	}
-});
+	window.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+			closeSearch();
+		}
+	});
+}
 </script>
 
 <style is:inline>
@@ -107,7 +126,7 @@ window.addEventListener('keydown', (event) => {
 	inset: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 80;
+	z-index: 1100; /* above mobile nav z-[1000] */
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;

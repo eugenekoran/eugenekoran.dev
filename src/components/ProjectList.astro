@@ -110,8 +110,6 @@ const baseUrl =
                                 image={p.image}
                                 imageAlt={p.title}
                                 description={p.description}
-                                variant="project"
-                                cta="View project →"
                             />
                         );
                     })
@@ -119,7 +117,6 @@ const baseUrl =
                 <Card
                     title={viewAllLabel}
                     href={`${baseUrl + (viewAllHref ?? '/projects/')}`}
-                    variant="project"
                 />
             </div>
         </div>

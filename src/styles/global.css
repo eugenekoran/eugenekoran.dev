@@ -4,6 +4,7 @@
 @theme {
 	--color-ink: #000000;
 	--color-muted: color-mix(in oklab, var(--color-ink) 72%, transparent);
+	--color-card: color-mix(in oklab, var(--color-ink) 4%, var(--color-surface));
 	--color-paper: #ffffff;
 	--color-surface: #ffffff;
 	--color-border: color-mix(in oklab, var(--color-ink) 14%, transparent);
@@ -274,8 +275,28 @@
 		margin: 0.25rem 0;
 		line-height: 1.2;
 	}
+
+	/* Ensure prose body text, links, and bold have proper contrast in light mode */
+	.post-article li {
+		color: var(--color-muted);
+	}
 }
 
+@layer utilities {
+  /* Override Tailwind Typography's neutral palette */
+  article.prose.prose-neutral {
+    --tw-prose-body: var(--color-muted);
+    --tw-prose-headings: var(--color-ink);
+    --tw-prose-bold: var(--color-ink);
+    --tw-prose-links: var(--color-ink);
+  }
+
+  /* Optional: make links clearly links */
+  article.prose.prose-neutral a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+	}
 /* Prevent search modal FOUC: loaded in <head> so it applies before the modal
    HTML is parsed during HTML streaming. Class selector (0-0-1-0) is lower
    specificity than .search-modal.is-open (0-0-2-0), so opening still works. */

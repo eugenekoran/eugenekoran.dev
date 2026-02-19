@@ -24,7 +24,6 @@ const site = await getSite();
 					date={featured.data.pubDate}
 					image={featured.data.heroImage}
 					imageAlt={featured.data.title}
-					variant="post"
 				>
 					{featured.data.tags.length > 0 && (
 						<div class="flex flex-wrap gap-2 pt-1 text-sm text-muted">
@@ -49,7 +48,6 @@ const site = await getSite();
 						date={post.data.pubDate}
 						image={post.data.heroImage}
 						imageAlt={post.data.title}
-						variant="post"
 					>
 						{post.data.tags.length > 0 && (
 							<div class="flex flex-wrap gap-2 pt-1 text-sm text-muted">
