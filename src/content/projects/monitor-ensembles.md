@@ -21,7 +21,7 @@ Presented at the AIWILD and AI4GOOD workshops at ICML 2026.
 ## Results
 
 - Diverse monitor ensembles outperform single monitors — a 3-monitor ensemble achieves **13.1% improvement** over the baseline, vs. only 5.5% from running three copies of the same monitor
-- Gains are largest exactly where it matters: **31% better recall at 1% FPR**, the strictest operational threshold
+- Ensemble gains plateau quickly — a carefully chosen 3-monitor ensemble matches a 12-monitor ensemble at one-quarter the compute cost.
  
 ## Links
 
