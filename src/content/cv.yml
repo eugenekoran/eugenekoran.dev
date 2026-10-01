@@ -2,7 +2,7 @@
   heading: "Research"
   items:
     - title: "SPAR — Research Engineer Fellow"
-      description: "Investigating multi-monitor ensemble techniques that enhance the safety-usefulness Pareto frontier for AI Control systems. Developed diverse monitor ensembles combining prompting and fine-tuning approaches to detect backdoored code, achieving 13+ percentage point improvement over single-monitor baselines (pAUC) with a 3-monitor ensemble. Preparing for ICLR 2026 submission."
+      description: "Co-authored Ensemble Monitoring for AI Control: Diverse Signals Outweigh More Compute (arXiv:2605.15377). Showed that combining diverse LLM monitors detects backdoored agent code more reliably than scaling a single model. Presented at AIWILD @ ICML 2026 and AI4GOOD @ ICML 2026."
       datetime: "Sep 2025 – Jan 2026"
 
 - id: "experience"

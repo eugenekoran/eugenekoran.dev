@@ -1,6 +1,6 @@
 ---
-title: "Monitor Ensembles for AI Control"
-description: "Developed diverse monitor ensembles that outperform scaling a single monitor by 2.4x at detecting backdoored code in AI Control setting."
+title: "Ensemble Monitoring for AI Control"
+description: "Co-authored AI safety research showing that combining diverse LLM monitors detects backdoored agent code more reliably than scaling a single model — presented at AIWILD and AI4GOOD @ ICML 2026."
 pubDate: 2026-02-17
 tags: ["AI Safety", "AI Control", "Inspect AI", "PyTorch"]
 category: research
@@ -10,7 +10,7 @@ category: research
 
 Research conducted as part of the Supervised Program for Alignment Research (SPAR), investigating multi-monitor ensemble techniques that enhance the safety-usefulness Pareto frontier for AI Control systems by strategically aggregating diverse monitoring signals.
 
-_Preparing findings for ICLR 2026 submission_
+Presented at the AIWILD and AI4GOOD workshops at ICML 2026.
 
 ## Contributions
 
@@ -25,6 +25,7 @@ _Preparing findings for ICLR 2026 submission_
  
 ## Links
 
+- [Paper (arXiv:2605.15377)](https://arxiv.org/abs/2605.15377) — Ensemble Monitoring for AI Control: Diverse Signals Outweigh More Compute
 - [GitHub Repository](https://github.com/Multi-Signal-Control-SPAR/Multi-Signal-Monitoring)
 
 ## Technologies
